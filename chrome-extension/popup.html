@@ -3,14 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Analysis</title>
+  <title>Zazzle Product Analyzer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Text Analysis</h1>
-    <div id="output">Analyzing...</div>
+    <header>
+      <h1>Zazzle Product Analyzer</h1>
+      <p class="subtitle">Instant SEO & Analytics</p>
+    </header>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Analyzing product...</p>
+    </div>
+
+    <div id="error" class="error" style="display: none;">
+      <p></p>
+    </div>
+
+    <div id="results" style="display: none;">
+      <section class="card">
+        <h2>Product Info</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <strong>Title:</strong>
+            <span id="product-title"></span>
+          </div>
+          <div class="info-item">
+            <strong>Price:</strong>
+            <span id="product-price"></span>
+          </div>
+          <div class="info-item">
+            <strong>Merchant:</strong>
+            <span id="product-merchant"></span>
+          </div>
+          <div class="info-item">
+            <strong>Category:</strong>
+            <span id="product-breadcrumbs"></span>
+          </div>
+          <div class="info-item">
+            <strong>Rating:</strong>
+            <span id="product-rating"></span>
+          </div>
+          <div class="info-item">
+            <strong>Reviews:</strong>
+            <span id="product-reviews"></span>
+          </div>
+        </div>
+        <div class="info-item full-width">
+          <strong>Tags:</strong>
+          <div id="product-tags" class="tags-container"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Analytics</h2>
+        <div class="analytics-grid">
+          <div class="metric">
+            <div class="metric-value" id="word-count"></div>
+            <div class="metric-label">Description Words</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="title-length"></div>
+            <div class="metric-label">Title Length</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="tag-count"></div>
+            <div class="metric-label">Tags</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="seo-score"></div>
+            <div class="metric-label">SEO Score</div>
+          </div>
+        </div>
+        <div class="keywords">
+          <strong>Top Keywords:</strong>
+          <div id="top-keywords"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Recommendations</h2>
+        <ul id="recommendations" class="recommendations-list"></ul>
+      </section>
+    </div>
   </div>
+
   <script src="popup.js"></script>
 </body>
 </html>

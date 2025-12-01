@@ -1,15 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "Text Analysis Extension",
+  "name": "Zazzle Product Analyzer",
   "version": "1.0.0",
-  "description": "Analyzes visible text content from the active tab",
+  "description": "Analyze Zazzle product pages with instant SEO and keyword insights",
   "permissions": [
     "activeTab",
     "scripting"
   ],
+  "host_permissions": [
+    "https://www.zazzle.com/*"
+  ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Analyze Page Text"
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
   },
   "icons": {
     "16": "icon16.png",
